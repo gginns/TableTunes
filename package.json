@@ -1,0 +1,62 @@
+{
+  "name": "tabletunes",
+  "version": "1.0.0",
+  "description": "YouTube to Discord music player for GMs",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "com.tabletunes.app",
+    "productName": "TableTunes",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "extraResources": [],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "src/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "TableTunes"
+    },
+    "nodeGypRebuild": false,
+    "npmRebuild": true,
+    "asarUnpack": [
+      "node_modules/ffmpeg-static/**",
+      "node_modules/sodium-native/**",
+      "node_modules/opusscript/**"
+    ]
+  },
+  "dependencies": {
+    "opusscript": "^0.1.1",
+    "@discordjs/voice": "^0.19.2",
+    "discord.js": "^14.16.3",
+    "ffmpeg-static": "^5.2.0",
+    "sodium-native": "^4.1.1",
+    "tweetnacl": "^1.0.3",
+    "yt-dlp-wrap": "^2.3.12"
+  },
+  "devDependencies": {
+    "electron-builder": "^25.1.8",
+    "electron": "^35.7.5"
+  },
+  "author": "gginn"
+}

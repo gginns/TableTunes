@@ -1,0 +1,4 @@
+node_modules/ 
+dist/ 
+yt-credentials.json 
+ytcookies.txt 
