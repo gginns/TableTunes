@@ -1,6 +1,8 @@
 # TableTunes 🎵
 **A GM music controller that streams YouTube audio to Discord voice channels.**
 
+This is still in developement and may result in bugs.
+
 ---
 
 ## Requirements
